@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "quilt_loader": {
+    "group": "${maven_group}",
+    "id": "${modid}",
+    "version": "${version}",
+    "metadata": {
+      "name": "${mod_name}",
+      "description": "A short description of your mod.",
+      "icon": "assets/${modid}/icon.png"
+    },
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "entrypoints": {
+      "init": "${maven_group}.${archives_base_name}.${ModName}Mod"
+    },
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "versions": ">=${quilt_loader}"
+      },
+      {
+        "id": "quilted_fabric_api",
+        "versions": ">=${qsl}"
+      },
+      {
+        "id": "minecraft",
+        "versions": ">=${minecraft_version}"
+      }
+    ]
+  },
+  "mixin": "${modid}.mixins.json"
+}
