@@ -1,10 +1,12 @@
 package io.github.offbeat_stuff.random_skyblock_mixins.mixin.foxes_with_berries;
 
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.passive.FoxEntity;
@@ -15,9 +17,14 @@ import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.World;
 
 @Mixin(FoxEntity.class)
-public abstract class FoxEntityMixin extends FoxEntity {
+public abstract class FoxEntityMixin extends Entity {
   private FoxEntityMixin(EntityType<? extends FoxEntity> type, World world) {
     super(type, world);
+  }
+
+  @Shadow
+  public FoxEntity.Type getFoxType() {
+    return null;
   }
 
   @Inject(method = "initEquipment", at = @At(value = "HEAD"), cancellable = true)
@@ -37,7 +44,8 @@ public abstract class FoxEntityMixin extends FoxEntity {
       } else if (f < 0.8F) {
         lv = new ItemStack(Items.LEATHER);
       } else {
-        lv = new ItemStack(this.getFoxType().equals(FoxEntity.Type.RED) ? Items.FEATHER : Items.SNOWBALL); // Feather
+        var type = this.getFoxType();
+        lv = new ItemStack(type.equals(FoxEntity.Type.RED) ? Items.FEATHER : Items.SNOWBALL); // Feather
       }
 
       this.equipStack(EquipmentSlot.MAINHAND, lv);

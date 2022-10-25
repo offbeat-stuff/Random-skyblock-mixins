@@ -4,6 +4,7 @@
   "package": "io.github.offbeat_stuff.random_skyblock_mixins.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "large_azalea_tree.AzaleaSaplingGeneratorMixin",
     "faster_wandering_trader_spawn.WanderingTraderManagerMixin",
     "foxes_with_berries.FoxEntityMixin",
     "renewable_grass.JungleSaplingGeneratorMixin",
