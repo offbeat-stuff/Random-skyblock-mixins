@@ -10,7 +10,7 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Material;
 
 @Mixin(AbstractBlock.Settings.class)
-public class AbstractBlockSettingsAccessor {
+public class AbstractBlockSettingsMixin {
   @Shadow
   boolean toolRequired;
   @Shadow

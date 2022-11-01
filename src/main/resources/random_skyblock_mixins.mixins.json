@@ -8,6 +8,7 @@
     "faster_wandering_trader_spawn.WanderingTraderManagerMixin",
     "foxes_with_berries.FoxEntityMixin",
     "renewable_grass.JungleSaplingGeneratorMixin",
+    "overworld_piglins.PigEntityMixin",
     "more_wandering_trades.WanderingTraderEntityMixin",
     "snowballs_with_hands.AbstractBlockSettingsMixin",
     "spread_netherack.NetherPortalBlockMixin",
