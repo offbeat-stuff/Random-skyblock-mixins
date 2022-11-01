@@ -24,5 +24,8 @@
 - [ ] crying obsidian portal (not yet)
 - [ ] caffeine config (for disabling mixins using a config)
 - [x] faster wandering trader spawn (max chance increased from 7.5% to 15%) (spawnDelay decreased from 20 minutes to 5 minutes) (so a trader should spawn in 30 minutes on averages, vanilla is 4 hours)
-- [x] 2x2 azalea trees (kind of)
+- [x] 2x2 azalea trees (little stable)
 - [x] snow dropping when mined with bare hands
+
+# Todo
+- [ ] Implement custom FoliagePlacer for 2x2 azalea tree so on growing you dont find glow berries on ground instantly

@@ -61,17 +61,17 @@ public class RandomSkyblockMixinsMod implements ModInitializer {
               DataPool.<BlockState>builder().add(Blocks.AZALEA_LEAVES.getDefaultState(), 3)
                   .add(Blocks.FLOWERING_AZALEA_LEAVES.getDefaultState(), 1)),
           new RandomSpreadFoliagePlacer(
-              UniformIntProvider.create(3, 4), ConstantIntProvider.ZERO,
-              UniformIntProvider.create(3, 4), 250),
+              UniformIntProvider.create(2, 4), ConstantIntProvider.ZERO,
+              UniformIntProvider.create(2, 3), 255),
           new TwoLayersFeatureSize(1, 1, 2))
           .dirtProvider(BlockStateProvider.of(Blocks.ROOTED_DIRT))
           .forceDirt()
           .decorators(ImmutableList.of(new C_rgeelgbr(
-              0.7F,
+              0.4F,
               1,
               0,
               BlockStateProvider.of(Blocks.CAVE_VINES.getDefaultState().with(CaveVines.BERRIES, Boolean.valueOf(true))),
-              2,
+              5,
               List.of(Direction.DOWN))))
           .build());
 

@@ -9,7 +9,7 @@
     "foxes_with_berries.FoxEntityMixin",
     "renewable_grass.JungleSaplingGeneratorMixin",
     "more_wandering_trades.WanderingTraderEntityMixin",
-    "snowballs_with_hands.AbstractBlockSettingsAccessor",
+    "snowballs_with_hands.AbstractBlockSettingsMixin",
     "spread_netherack.NetherPortalBlockMixin",
     "renewable_deepslate.FluidBlockMixin",
     "renewable_deepslate.LavaFluidMixin"
