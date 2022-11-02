@@ -13,6 +13,8 @@
     "more_wandering_trades.WanderingTraderEntityMixin",
     "snowballs_with_hands.AbstractBlockSettingsMixin",
     "spread_netherack.NetherPortalBlockMixin",
+    "crying_portals.AreaHelperMixin",
+    "crying_portals.AbstractFireBlockMixin",
     "renewable_deepslate.FluidBlockMixin",
     "renewable_deepslate.LavaFluidMixin"
   ],

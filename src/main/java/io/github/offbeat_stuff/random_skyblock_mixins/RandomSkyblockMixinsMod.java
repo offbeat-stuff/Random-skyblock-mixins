@@ -61,8 +61,8 @@ public class RandomSkyblockMixinsMod implements ModInitializer {
               DataPool.<BlockState>builder().add(Blocks.AZALEA_LEAVES.getDefaultState(), 3)
                   .add(Blocks.FLOWERING_AZALEA_LEAVES.getDefaultState(), 1)),
           new RandomSpreadFoliagePlacer(
-              UniformIntProvider.create(2, 3), ConstantIntProvider.ZERO,
-              UniformIntProvider.create(2, 3), 255),
+              ConstantIntProvider.create(3), ConstantIntProvider.ZERO,
+              UniformIntProvider.create(2, 3), 200),
           new TwoLayersFeatureSize(1, 1, 2))
           .dirtProvider(BlockStateProvider.of(Blocks.ROOTED_DIRT))
           .forceDirt()
