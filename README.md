@@ -29,4 +29,4 @@
 - [x] piglins spawning when pigs are hit by lightning
 
 # Todo
-- [ ] Implement custom FoliagePlacer for 2x2 azalea tree so on growing you dont find glow berries on ground **instantly**
+- [ ] Implement custom FoliagePlacer for 2x2 azalea tree so on growing you dont find glow berries on ground instantly

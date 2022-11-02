@@ -19,10 +19,10 @@ public class SpreadGrassTreeDecorator extends AlterGroundTreeDecorator {
   }
 
   @Override
-  public void generate(TreeDecorator.C_jvnizkzw ctx) {
+  public void generate(TreeDecorator.Placer ctx) {
     ArrayList<BlockPos> list = Lists.newArrayList();
-    ObjectArrayList<BlockPos> list2 = ctx.m_mjguskgs(); // Context.roots()
-    ObjectArrayList<BlockPos> list3 = ctx.m_thwqlzzf(); // Context.logs()
+    ObjectArrayList<BlockPos> list2 = ctx.getRootPositions(); // Context.roots()
+    ObjectArrayList<BlockPos> list3 = ctx.getLogPositions(); // Context.logs()
 
     // get the stuff that is at lowest (either logs or combined or roots)
 
@@ -54,14 +54,14 @@ public class SpreadGrassTreeDecorator extends AlterGroundTreeDecorator {
     }
   }
 
-  private void handlePos(TreeDecorator.C_jvnizkzw ctx, BlockPos pos, int distance) {
+  private void handlePos(TreeDecorator.Placer ctx, BlockPos pos, int distance) {
     if (!testPosForConversionToGrass(ctx, pos.down()))
       return;
     placeBlockAt(ctx, pos.down());
     if (distance > 5)
       return;
-    if (ctx.m_nouqmltl().nextInt(2) != 0) // this is actually calling a random function so there is 2/3 chance of it to
-                                          // stop the spreading
+    if (ctx.getRandom().nextInt(2) != 0) // this is actually calling a random function so there is 2/3 chance of it to
+                                         // stop the spreading
       return;
     for (int x = -1; x <= 1; x++) {
       for (int y = -1; y <= 1; y++) {
@@ -82,13 +82,13 @@ public class SpreadGrassTreeDecorator extends AlterGroundTreeDecorator {
     return state.isOf(Blocks.DIRT);
   }
 
-  private boolean testPosForConversionToGrass(TreeDecorator.C_jvnizkzw ctx, BlockPos pos) {
-    return ctx.m_mdtsjsnm().testBlockState(pos, this::isDirt)
-        && ctx.m_mdtsjsnm().testBlockState(pos.up(), this::isGrass);
+  private boolean testPosForConversionToGrass(TreeDecorator.Placer ctx, BlockPos pos) {
+    return ctx.getWorld().testBlockState(pos, this::isDirt)
+        && ctx.getWorld().testBlockState(pos.up(), this::isGrass);
   }
 
-  private void placeBlockAt(TreeDecorator.C_jvnizkzw ctx, BlockPos pos) {
-    ctx.m_lgousnhs(pos, Blocks.GRASS_BLOCK.getDefaultState()); // set block
-    ctx.m_lgousnhs(pos.up(), Blocks.AIR.getDefaultState()); // set block
+  private void placeBlockAt(TreeDecorator.Placer ctx, BlockPos pos) {
+    ctx.replace(pos, Blocks.GRASS_BLOCK.getDefaultState()); // set block
+    ctx.replace(pos.up(), Blocks.AIR.getDefaultState()); // set block
   }
 }

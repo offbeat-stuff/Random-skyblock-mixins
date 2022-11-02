@@ -6,6 +6,7 @@ var mixinsStr = """
   "minVersion": "0.8",
   "package": "io.github.offbeat_stuff.random_skyblock_mixins.mixin",
   "compatibilityLevel": "JAVA_17",
+  "plugin": "io.github.offbeat_stuff.random_skyblock_mixins.RandomSkyblockMixinsConfigPlugin",
   "mixins": [
     $1
   ],
