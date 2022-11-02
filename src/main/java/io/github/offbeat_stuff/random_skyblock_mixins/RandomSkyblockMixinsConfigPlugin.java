@@ -1,7 +1,6 @@
 package io.github.offbeat_stuff.random_skyblock_mixins;
 
 import org.quiltmc.loader.api.QuiltLoader;
-
 import net.caffeinemc.caffeineconfig.AbstractCaffeineConfigMixinPlugin;
 import net.caffeinemc.caffeineconfig.CaffeineConfig;
 

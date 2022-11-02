@@ -56,12 +56,12 @@ public class RandomSkyblockMixinsMod implements ModInitializer {
       Feature.TREE,
       new TreeFeatureConfig.Builder(
           BlockStateProvider.of(Blocks.OAK_LOG),
-          new GiantTrunkPlacer(7, 4, 0),
+          new GiantTrunkPlacer(6, 4, 0),
           new WeightedBlockStateProvider(
               DataPool.<BlockState>builder().add(Blocks.AZALEA_LEAVES.getDefaultState(), 3)
                   .add(Blocks.FLOWERING_AZALEA_LEAVES.getDefaultState(), 1)),
           new RandomSpreadFoliagePlacer(
-              UniformIntProvider.create(2, 4), ConstantIntProvider.ZERO,
+              UniformIntProvider.create(2, 3), ConstantIntProvider.ZERO,
               UniformIntProvider.create(2, 3), 255),
           new TwoLayersFeatureSize(1, 1, 2))
           .dirtProvider(BlockStateProvider.of(Blocks.ROOTED_DIRT))
@@ -71,7 +71,7 @@ public class RandomSkyblockMixinsMod implements ModInitializer {
               1,
               0,
               BlockStateProvider.of(Blocks.CAVE_VINES.getDefaultState().with(CaveVines.BERRIES, Boolean.valueOf(true))),
-              5,
+              3,
               List.of(Direction.DOWN))))
           .build());
 
