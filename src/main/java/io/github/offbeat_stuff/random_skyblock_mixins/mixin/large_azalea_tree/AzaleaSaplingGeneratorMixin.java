@@ -35,17 +35,17 @@ public class AzaleaSaplingGeneratorMixin extends SaplingGenerator {
 
   public boolean generateLargeTree(ServerWorld world, ChunkGenerator chunkGenerator, BlockPos pos, BlockState state,
       RandomGenerator random, int x, int z) {
-    Holder<? extends ConfiguredFeature<?, ?>> lv = RandomSkyblockMixinsMod.MEGA_AZALEA_TREE;
-    if (lv == null) {
+    Holder<? extends ConfiguredFeature<?, ?>> megaTreeFeature = RandomSkyblockMixinsMod.MEGA_AZALEA_TREE;
+    if (megaTreeFeature == null) {
       return false;
     } else {
-      ConfiguredFeature<?, ?> lv2 = (ConfiguredFeature<?, ?>) lv.value();
-      BlockState lv3 = Blocks.AIR.getDefaultState();
-      world.setBlockState(pos.add(x, 0, z), lv3, Block.NO_REDRAW);
-      world.setBlockState(pos.add(x + 1, 0, z), lv3, Block.NO_REDRAW);
-      world.setBlockState(pos.add(x, 0, z + 1), lv3, Block.NO_REDRAW);
-      world.setBlockState(pos.add(x + 1, 0, z + 1), lv3, Block.NO_REDRAW);
-      if (lv2.generate(world, chunkGenerator, random, pos.add(x, 0, z))) {
+      ConfiguredFeature<?, ?> megaTree = (ConfiguredFeature<?, ?>) megaTreeFeature.value();
+      BlockState air = Blocks.AIR.getDefaultState();
+      world.setBlockState(pos.add(x, 0, z), air, Block.NO_REDRAW);
+      world.setBlockState(pos.add(x + 1, 0, z), air, Block.NO_REDRAW);
+      world.setBlockState(pos.add(x, 0, z + 1), air, Block.NO_REDRAW);
+      world.setBlockState(pos.add(x + 1, 0, z + 1), air, Block.NO_REDRAW);
+      if (megaTree.generate(world, chunkGenerator, random, pos.add(x, 0, z))) {
         return true;
       } else {
         world.setBlockState(pos.add(x, 0, z), state, Block.NO_REDRAW);

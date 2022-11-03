@@ -23,32 +23,30 @@ public abstract class FoxEntityMixin extends Entity {
   }
 
   @Shadow
-  public FoxEntity.Type getFoxType() {
-    return null;
-  }
+  public abstract FoxEntity.Type getFoxType();
 
   @Inject(method = "initEquipment", at = @At(value = "HEAD"), cancellable = true)
   private void changeEquipment(RandomGenerator random, LocalDifficulty difficulty, CallbackInfo ci) {
     if (random.nextFloat() < 0.2F) {
       float f = random.nextFloat();
-      ItemStack lv;
+      ItemStack itemInMouth;
 
       if (f < 0.05F) {
-        lv = new ItemStack(Items.EMERALD);
+        itemInMouth = new ItemStack(Items.EMERALD);
       } else if (f < 0.2F) {
-        lv = new ItemStack(Items.EGG);
+        itemInMouth = new ItemStack(Items.EGG);
       } else if (f < 0.4F) {
-        lv = random.nextBoolean() ? new ItemStack(Items.RABBIT_FOOT) : new ItemStack(Items.RABBIT_HIDE);
+        itemInMouth = random.nextBoolean() ? new ItemStack(Items.RABBIT_FOOT) : new ItemStack(Items.RABBIT_HIDE);
       } else if (f < 0.6F) {
-        lv = new ItemStack(Items.SWEET_BERRIES); // was Wheat
+        itemInMouth = new ItemStack(Items.SWEET_BERRIES); // was Wheat
       } else if (f < 0.8F) {
-        lv = new ItemStack(Items.LEATHER);
+        itemInMouth = new ItemStack(Items.LEATHER);
       } else {
         var type = this.getFoxType();
-        lv = new ItemStack(type.equals(FoxEntity.Type.RED) ? Items.FEATHER : Items.SNOWBALL); // Feather
+        itemInMouth = new ItemStack(type.equals(FoxEntity.Type.RED) ? Items.FEATHER : Items.SNOWBALL); // Feather
       }
 
-      this.equipStack(EquipmentSlot.MAINHAND, lv);
+      this.equipStack(EquipmentSlot.MAINHAND, itemInMouth);
     }
     ci.cancel();
   }

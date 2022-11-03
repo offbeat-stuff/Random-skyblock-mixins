@@ -23,7 +23,6 @@ public abstract class LavaFluidMixin {
   @Inject(method = "flow", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/Block;getDefaultState()Lnet/minecraft/block/BlockState;"), cancellable = true)
   private void generateDeepslate(WorldAccess world, BlockPos pos, BlockState state, Direction direction,
       FluidState fluidState, CallbackInfo ci) {
-    // ((World) world).getRegistryKey().equals(World.OVERWORLD)
     if (pos.getY() < 0) {
       world.setBlockState(pos, Blocks.DEEPSLATE.getDefaultState(), Block.NOTIFY_ALL);
       this.playExtinguishEvent(world, pos);

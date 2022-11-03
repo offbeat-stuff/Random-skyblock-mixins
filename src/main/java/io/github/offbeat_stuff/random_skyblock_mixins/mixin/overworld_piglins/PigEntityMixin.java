@@ -27,18 +27,18 @@ public class PigEntityMixin extends AnimalEntity {
 
   @Inject(method = "onStruckByLightning", at = @At(value = "HEAD"), cancellable = true)
   private void changeToPiglins(ServerWorld world, LightningEntity lightning, CallbackInfo ci) {
-    PiglinEntity lv = EntityType.PIGLIN.create(world);
-    lv.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.GOLDEN_SWORD));
-    lv.refreshPositionAndAngles(this.getX(), this.getY(), this.getZ(), this.getYaw(), this.getPitch());
-    lv.setAiDisabled(this.isAiDisabled());
-    lv.setBaby(this.isBaby());
+    PiglinEntity piglin = EntityType.PIGLIN.create(world);
+    piglin.equipStack(EquipmentSlot.MAINHAND, new ItemStack(Items.GOLDEN_SWORD));
+    piglin.refreshPositionAndAngles(this.getX(), this.getY(), this.getZ(), this.getYaw(), this.getPitch());
+    piglin.setAiDisabled(this.isAiDisabled());
+    piglin.setBaby(this.isBaby());
     if (this.hasCustomName()) {
-      lv.setCustomName(this.getCustomName());
-      lv.setCustomNameVisible(this.isCustomNameVisible());
+      piglin.setCustomName(this.getCustomName());
+      piglin.setCustomNameVisible(this.isCustomNameVisible());
     }
 
-    lv.setPersistent();
-    world.spawnEntity(lv);
+    piglin.setPersistent();
+    world.spawnEntity(piglin);
     this.discard();
     ci.cancel();
   }

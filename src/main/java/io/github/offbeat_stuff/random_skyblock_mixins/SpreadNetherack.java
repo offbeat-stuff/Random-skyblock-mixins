@@ -15,9 +15,6 @@ public class SpreadNetherack {
 
     if (world.isClient)
       return;
-    // no need it definetly is a nether portal block
-    // if (!world.getBlockState(pos).isOf(Blocks.NETHER_PORTAL))
-    // return;
 
     // check Portal height
     var downTo = portalBlocksInDirection(world, pos, Direction.DOWN);
@@ -141,7 +138,7 @@ public class SpreadNetherack {
       }
 
       if (world.getBlockState(pos).isOf(Blocks.WATER)) {
-        if (random.nextInt(20) == 0) {
+        if (random.nextInt(10) == 0) {
           world.setBlockState(pos, Blocks.AIR.getDefaultState(), Block.NO_REDRAW);
           world.setBlockState(pos, Blocks.LAVA.getDefaultState(), Block.NOTIFY_ALL);
         }

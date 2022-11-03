@@ -17,8 +17,8 @@ public class NetherPortalBlockMixin {
   @Inject(method = "randomTick", at = @At(value = "HEAD"))
   private void spreadNetherack(BlockState state, ServerWorld world, BlockPos pos, RandomGenerator random,
       CallbackInfo ci) {
-    // if (!world.getDimension().natural())
-    // return;
+    if (!world.getDimension().natural())
+      return;
     SpreadNetherack.trySpreadAt(world, pos, random);
   }
 }
