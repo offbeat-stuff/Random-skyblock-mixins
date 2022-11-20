@@ -8,6 +8,7 @@
     "large_azalea_tree.AzaleaSaplingGeneratorMixin",
     "faster_wandering_trader_spawn.WanderingTraderManagerMixin",
     "foxes_with_berries.FoxEntityMixin",
+    "renewable_netherack_and_nylium.PortalForcerMixin",
     "renewable_grass.JungleSaplingGeneratorMixin",
     "overworld_piglins.PigEntityMixin",
     "more_wandering_trades.WanderingTraderEntityMixin",

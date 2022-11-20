@@ -2,7 +2,8 @@
 
 > Grass -> by growing a mega jungle tree surrounding grass placed on dirt
 
-> Lava -> through wandering trader (single use trade) (through the nether portal netherack renewability but with very low probability)
+> Lava -> actually I am thinking of removing those and just using the carpet sky additions method, already removed the lava trade.
+> through wandering trader (single use trade) (through the nether portal netherack renewability but with very low probability)
 
 > Netherack -> by making a nether portal frame with 20% to 33% crying obsidian (also need to have corners filled in) in the frame and at least half of the blocks on top (including air) being gold block on top. It will spread netherack to stone block at lower levels of the portal (overworld only) (probably will make it only work in ruined portal bounding box)
 

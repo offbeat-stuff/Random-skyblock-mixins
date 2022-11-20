@@ -16,6 +16,7 @@ public class RandomSkyblockMixinsConfigPlugin extends AbstractCaffeineConfigMixi
         .addMixinOption("more_wandering_trades", false)
         .addMixinOption("overworld_piglins", false)
         .addMixinOption("renewable_grass", false)
+        .addMixinOption("renewable_netherack_and_nylium", false)
         .addMixinOption("foxes_with_berries", false)
         .addMixinOption("faster_wandering_trader_spawn", false)
         .addMixinOption("large_azalea_tree", false)
