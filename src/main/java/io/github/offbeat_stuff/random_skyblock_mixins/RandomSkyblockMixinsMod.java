@@ -40,7 +40,8 @@ public class RandomSkyblockMixinsMod implements ModInitializer {
 
   public static Holder<ConfiguredFeature<TreeFeatureConfig, ?>> MEGA_JUNGLE_TREE_GRASS = ConfiguredFeatureUtil
       .register("mega_jungle_tree_grass", Feature.TREE,
-          new TreeFeatureConfig.Builder(BlockStateProvider.of(Blocks.JUNGLE_LOG), new MegaJungleTrunkPlacer(10, 2, 19),
+          new TreeFeatureConfig.Builder(BlockStateProvider.of(Blocks.JUNGLE_LOG),
+              new MegaJungleTrunkPlacer(10, 2, 19),
               BlockStateProvider.of(Blocks.JUNGLE_LEAVES),
               new JungleFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),
               new TwoLayersFeatureSize(1, 1, 2))
@@ -70,7 +71,8 @@ public class RandomSkyblockMixinsMod implements ModInitializer {
               0.4F,
               1,
               0,
-              BlockStateProvider.of(Blocks.CAVE_VINES.getDefaultState().with(CaveVines.BERRIES, Boolean.valueOf(true))),
+              BlockStateProvider.of(
+                  Blocks.CAVE_VINES.getDefaultState().with(CaveVines.BERRIES, Boolean.valueOf(true))),
               3,
               List.of(Direction.DOWN))))
           .build());

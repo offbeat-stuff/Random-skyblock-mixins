@@ -35,7 +35,7 @@ public class AzaleaSaplingGeneratorMixin extends SaplingGenerator {
 
   public boolean generateLargeTree(ServerWorld world, ChunkGenerator chunkGenerator, BlockPos pos, BlockState state,
       RandomGenerator random, int x, int z) {
-    Holder<? extends ConfiguredFeature<?, ?>> megaTreeFeature = RandomSkyblockMixinsMod.MEGA_AZALEA_TREE;
+    var megaTreeFeature = RandomSkyblockMixinsMod.MEGA_AZALEA_TREE;
     if (megaTreeFeature == null) {
       return false;
     } else {

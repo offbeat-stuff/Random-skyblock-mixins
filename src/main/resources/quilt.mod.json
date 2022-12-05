@@ -16,15 +16,15 @@
     "depends": [
       {
         "id": "quilt_loader",
-        "versions": ">=${quilt_loader}"
+        "versions": ">=${ql_version}"
       },
       {
         "id": "quilted_fabric_api",
-        "versions": ">=${qsl}"
+        "versions": ">=${qfapi_version}"
       },
       {
         "id": "minecraft",
-        "versions": ">=${minecraft_version}"
+        "versions": ">=${mc_version}"
       }
     ]
   },
