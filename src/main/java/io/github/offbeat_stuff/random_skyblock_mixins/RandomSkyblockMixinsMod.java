@@ -14,7 +14,6 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CaveVines;
-import net.minecraft.registry.Holder;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -26,10 +25,8 @@ import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.TreeFeature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
-import net.minecraft.world.gen.feature.util.ConfiguredFeatureUtil;
 import net.minecraft.world.gen.foliage.JungleFoliagePlacer;
 import net.minecraft.world.gen.foliage.RandomSpreadFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
@@ -47,11 +44,11 @@ public class RandomSkyblockMixinsMod implements ModInitializer {
   public static final String NAMESPACE = "random_skyblock_mixins";
 
   private static final Identifier MEGA_JUNGLE_TREE_GRASS = new Identifier(NAMESPACE, "mega_jungle_tree_grass");
-  private static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_JUNGLE_TREE_GRASS_FEATURE = RegistryKey
+  public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_JUNGLE_TREE_GRASS_FEATURE = RegistryKey
       .of(RegistryKeys.CONFIGURED_FEATURE, MEGA_JUNGLE_TREE_GRASS);
 
   private static final Identifier MEGA_AZALEA_TREE = new Identifier(NAMESPACE, "mega_azalea_tree");
-  private static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_AZALEA_TREE_FEATURE = RegistryKey
+  public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_AZALEA_TREE_FEATURE = RegistryKey
       .of(RegistryKeys.CONFIGURED_FEATURE, MEGA_AZALEA_TREE);
 
   @Override
@@ -65,10 +62,13 @@ public class RandomSkyblockMixinsMod implements ModInitializer {
             BlockStateProvider.of(Blocks.JUNGLE_LOG),
             new MegaJungleTrunkPlacer(10, 2, 19),
             BlockStateProvider.of(Blocks.JUNGLE_LEAVES),
-            new JungleFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),
+            new JungleFoliagePlacer(ConstantIntProvider.create(2),
+                ConstantIntProvider.create(0), 2),
             new TwoLayersFeatureSize(1, 1, 2))
-            .decorators(ImmutableList.of(TrunkVineTreeDecorator.INSTANCE, new LeavesVineTreeDecorator(0.25F),
-                new SpreadGrassTreeDecorator()))
+            .decorators(
+                ImmutableList.of(TrunkVineTreeDecorator.INSTANCE,
+                    new LeavesVineTreeDecorator(0.25F),
+                    new SpreadGrassTreeDecorator()))
             .build());
         Registry.register(configuredRegistry, MEGA_JUNGLE_TREE_GRASS_FEATURE,
             jungleFeature);
@@ -77,8 +77,11 @@ public class RandomSkyblockMixinsMod implements ModInitializer {
             BlockStateProvider.of(Blocks.OAK_LOG),
             new GiantTrunkPlacer(6, 4, 0),
             new WeightedBlockStateProvider(
-                DataPool.<BlockState>builder().add(Blocks.AZALEA_LEAVES.getDefaultState(), 3)
-                    .add(Blocks.FLOWERING_AZALEA_LEAVES.getDefaultState(), 1)),
+                DataPool.<BlockState>builder()
+                    .add(Blocks.AZALEA_LEAVES
+                        .getDefaultState(), 3)
+                    .add(Blocks.FLOWERING_AZALEA_LEAVES
+                        .getDefaultState(), 1)),
             new RandomSpreadFoliagePlacer(
                 ConstantIntProvider.create(3), ConstantIntProvider.ZERO,
                 UniformIntProvider.create(2, 3), 200),
@@ -90,8 +93,9 @@ public class RandomSkyblockMixinsMod implements ModInitializer {
                 1,
                 0,
                 BlockStateProvider.of(
-                    Blocks.CAVE_VINES.getDefaultState().with(CaveVines.BERRIES,
-                        Boolean.valueOf(true))),
+                    Blocks.CAVE_VINES.getDefaultState()
+                        .with(CaveVines.BERRIES,
+                            Boolean.valueOf(true))),
                 3,
                 List.of(Direction.DOWN))))
             .build());

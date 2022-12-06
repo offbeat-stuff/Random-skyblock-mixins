@@ -7,15 +7,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import io.github.offbeat_stuff.random_skyblock_mixins.RandomSkyblockMixinsMod;
 import net.minecraft.block.sapling.JungleSaplingGenerator;
-import net.minecraft.util.Holder;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 
 @Mixin(JungleSaplingGenerator.class)
 public class JungleSaplingGeneratorMixin {
 
   @Inject(method = "getLargeTreeFeature", at = @At(value = "HEAD"), cancellable = true)
-  private void changeLargeTreeFeature(CallbackInfoReturnable<Holder<? extends ConfiguredFeature<?, ?>>> cir) {
-    cir.setReturnValue(RandomSkyblockMixinsMod.MEGA_JUNGLE_TREE_GRASS);
+  private void changeLargeTreeFeature(CallbackInfoReturnable<RegistryKey<ConfiguredFeature<?, ?>>> cir) {
+    cir.setReturnValue(RandomSkyblockMixinsMod.MEGA_JUNGLE_TREE_GRASS_FEATURE);
     cir.cancel();
   }
 }

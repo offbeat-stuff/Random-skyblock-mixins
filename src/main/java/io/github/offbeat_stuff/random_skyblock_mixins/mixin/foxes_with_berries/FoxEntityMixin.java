@@ -23,7 +23,7 @@ public abstract class FoxEntityMixin extends Entity {
   }
 
   @Shadow
-  public abstract FoxEntity.Type getFoxType();
+  public abstract FoxEntity.Variant getVariant();
 
   @Inject(method = "initEquipment", at = @At(value = "HEAD"), cancellable = true)
   private void changeEquipment(RandomGenerator random, LocalDifficulty difficulty, CallbackInfo ci) {
@@ -42,8 +42,8 @@ public abstract class FoxEntityMixin extends Entity {
       } else if (f < 0.8F) {
         itemInMouth = new ItemStack(Items.LEATHER);
       } else {
-        var type = this.getFoxType();
-        itemInMouth = new ItemStack(type.equals(FoxEntity.Type.RED) ? Items.FEATHER : Items.SNOWBALL); // Feather
+        var type = this.getVariant();
+        itemInMouth = new ItemStack(type.equals(FoxEntity.Variant.RED) ? Items.FEATHER : Items.SNOWBALL); // Feather
       }
 
       this.equipStack(EquipmentSlot.MAINHAND, itemInMouth);

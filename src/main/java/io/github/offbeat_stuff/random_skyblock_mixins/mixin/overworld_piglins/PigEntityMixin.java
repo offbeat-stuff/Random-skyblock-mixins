@@ -19,7 +19,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 
 @Mixin(PigEntity.class)
-public class PigEntityMixin extends AnimalEntity {
+public abstract class PigEntityMixin extends AnimalEntity {
 
   private PigEntityMixin(EntityType<? extends AnimalEntity> entityType, World world) {
     super(entityType, world);
@@ -45,7 +45,5 @@ public class PigEntityMixin extends AnimalEntity {
 
   @Override
   @Shadow
-  public PassiveEntity createChild(ServerWorld arg0, PassiveEntity arg1) {
-    return null;
-  }
+  public abstract PassiveEntity createChild(ServerWorld world, PassiveEntity entity);
 }
