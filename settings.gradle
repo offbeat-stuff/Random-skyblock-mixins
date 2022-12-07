@@ -16,12 +16,11 @@ pluginManagement {
 dependencyResolutionManagement {
   versionCatalogs {
     libs {
-      version('quilt_mappings',"${minecraft_version}+build.${quilt_mappings}")
-      library("minecraft","com.mojang","minecraft").version(minecraft_version)
-      library("quilt_mappings","org.quiltmc","quilt-mappings").versionRef('quilt_mappings')
-      library("quilt_loader","org.quiltmc","quilt-loader").version(quilt_loader)
-      library("quilted_fabric_api","org.quiltmc.quilted-fabric-api","quilted-fabric-api").version("${qsl}+${fabric_api}-${minecraft_version}")
-      plugin('quilt_loom', 'org.quiltmc.loom').version("${loom_version}")
+      library("minecraft","com.mojang","minecraft").version(mc_version)
+      library("quilt_mappings","org.quiltmc","quilt-mappings").version(qm_version)
+      library("quilt_loader","org.quiltmc","quilt-loader").version(ql_version)
+      library("quilted_fabric_api","org.quiltmc.quilted-fabric-api","quilted-fabric-api").version("${qfapi_version}+${fapi_version}")
+      plugin('quilt_loom', 'org.quiltmc.loom').version(loom_version)
     }
   }
 }

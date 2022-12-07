@@ -16,7 +16,9 @@ import net.minecraft.world.WorldAccess;
 @Mixin(FluidBlock.class)
 public abstract class FluidBlockMixin {
   @Shadow
-  protected abstract void playExtinguishSound(WorldAccess world, BlockPos pos);
+  private void playExtinguishSound(WorldAccess world, BlockPos pos){
+
+  };
 
   @Inject(method = "receiveNeighborFluids", at = @At(value = "INVOKE", target = "Lnet/minecraft/fluid/FluidState;isSource()Z"), cancellable = true)
   private void receiveFluidToDeepslate(World world, BlockPos pos, BlockState state,

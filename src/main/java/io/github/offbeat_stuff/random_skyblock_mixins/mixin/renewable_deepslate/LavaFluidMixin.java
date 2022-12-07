@@ -18,7 +18,9 @@ import net.minecraft.world.WorldAccess;
 @Mixin(LavaFluid.class)
 public abstract class LavaFluidMixin {
   @Shadow
-  protected abstract void playExtinguishEvent(WorldAccess world, BlockPos pos);
+  private void playExtinguishEvent(WorldAccess world, BlockPos pos) {
+
+  };
 
   @Inject(method = "flow", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/Block;getDefaultState()Lnet/minecraft/block/BlockState;"), cancellable = true)
   private void generateDeepslate(WorldAccess world, BlockPos pos, BlockState state, Direction direction,

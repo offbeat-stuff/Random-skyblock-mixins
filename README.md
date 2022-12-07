@@ -47,6 +47,7 @@ mixin.snowballs_with_hands=true
 mixin.more_wandering_trades=true
 mixin.overworld_piglins=true
 mixin.renewable_grass=true
+mixin.renewable_netherack_and_nylium=true
 mixin.foxes_with_berries=true
 mixin.faster_wandering_trader_spawn=true
 mixin.large_azalea_tree=true
