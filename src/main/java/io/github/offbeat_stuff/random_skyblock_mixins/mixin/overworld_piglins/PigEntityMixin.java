@@ -11,7 +11,6 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.mob.PiglinEntity;
 import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -32,6 +31,7 @@ public abstract class PigEntityMixin extends AnimalEntity {
     piglin.refreshPositionAndAngles(this.getX(), this.getY(), this.getZ(), this.getYaw(), this.getPitch());
     piglin.setAiDisabled(this.isAiDisabled());
     piglin.setBaby(this.isBaby());
+    piglin.addScoreboardTag("OVERWORLD_PIGLIN");
     if (this.hasCustomName()) {
       piglin.setCustomName(this.getCustomName());
       piglin.setCustomNameVisible(this.isCustomNameVisible());
@@ -42,8 +42,4 @@ public abstract class PigEntityMixin extends AnimalEntity {
     this.discard();
     ci.cancel();
   }
-
-  @Override
-  @Shadow
-  public abstract PassiveEntity createChild(ServerWorld world, PassiveEntity entity);
 }
