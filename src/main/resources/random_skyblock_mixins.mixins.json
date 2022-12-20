@@ -11,11 +11,8 @@
     "renewable_netherack_and_nylium.PortalForcerMixin",
     "renewable_grass.JungleSaplingGeneratorMixin",
     "overworld_piglins.PigEntityMixin",
-    "more_wandering_trades.WanderingTraderEntityMixin",
     "snowballs_with_hands.AbstractBlockSettingsMixin",
-    "spread_netherack.NetherPortalBlockMixin",
-    "crying_portals.AreaHelperMixin",
-    "crying_portals.AbstractFireBlockMixin",
+    "skyblock_wandering_trader_trades.WanderingTraderEntityMixin",
     "renewable_deepslate.FluidBlockMixin",
     "renewable_deepslate.LavaFluidMixin"
   ],

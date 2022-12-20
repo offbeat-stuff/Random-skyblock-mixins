@@ -1,6 +1,5 @@
-package io.github.offbeat_stuff.random_skyblock_mixins.mixin.more_wandering_trades;
+package io.github.offbeat_stuff.random_skyblock_mixins.mixin.skyblock_wandering_trader_trades;
 
-// import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 
 import com.google.common.collect.ImmutableMap;
@@ -10,7 +9,6 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-// import org.spongepowered.asm.mixin.injection.Redirect;
 
 import net.minecraft.entity.passive.WanderingTraderEntity;
 import net.minecraft.item.Items;
@@ -63,14 +61,6 @@ public class WanderingTraderEntityMixin {
               new TradeOffers.SellItemFactory(Items.PACKED_ICE, 3, 1, 6, 1),
               new TradeOffers.SellItemFactory(Items.BLUE_ICE, 6, 1, 6, 1)
           }));
-
-  // remove redirect because of conflict with carpet sky additions
-  // @Redirect(method = "fillRecipes", at = @At(value = "FIELD", opcode =
-  // Opcodes.GETSTATIC, target =
-  // "Lnet/minecraft/village/TradeOffers;WANDERING_TRADER_TRADES:Lit/unimi/dsi/fastutil/ints/Int2ObjectMap;"))
-  // private Int2ObjectMap<TradeOffers.Factory[]> getTrades() {
-  // return WANDERING_TRADER_TRADES;
-  // }
 
   @ModifyVariable(method = "fillRecipes", at = @At("STORE"), ordinal = 0)
   private TradeOffers.Factory[] changeFactory1(TradeOffers.Factory[] f1) {

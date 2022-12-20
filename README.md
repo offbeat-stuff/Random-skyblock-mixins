@@ -2,12 +2,7 @@
 
 > Grass -> by growing a mega jungle tree surrounding grass placed on dirt
 
-> Lava -> actually I am thinking of removing those and just using the carpet sky additions method, already removed the lava trade.
-> through wandering trader (single use trade) (through the nether portal netherack renewability but with very low probability)
-
-> Netherack -> by making a nether portal frame with 20% to 33% crying obsidian (also need to have corners filled in) in the frame and at least half of the blocks on top (including air) being gold block on top. It will spread netherack to stone block at lower levels of the portal (overworld only) (probably will make it only work in ruined portal bounding box)
-
-> Nylium -> by making a portal (the one for the netherack) in nether when you barter with a piglin nearby the portal it has a chance to cancel the barter and turn the netherack below it to the respective nylium of the biome (so only works in crimson or warped forest biome) (needs to be very large like at least 7x10 so (made from 38 blocks of either obsidian or crying obsidian filled with corners))
+> Netherack (+Nylium) -> by making a floating nether portal, it will generate with 4 netherack as extension + there is a 1 in 10 chance of it being a nylium (for corresponding biome)
 
 > glow berries -> by growing a mega 2x2 azalea tree
 
@@ -15,14 +10,13 @@
 
 > Arctic foxes spawn with snowball instead of feather,foxes spawn with sweet berries instead of wheat in their mouth
 
+> Endstone -> will generate through a cobblestone generator in the end
+
 </br>
 
 # Implemented currently
-- [x] Lava (wandering trader)
-- [x] Foxes
-- [x] Nether portal spread lava and netherack (everywhere in overworld)
+- [x] Foxes (berries + snowball)
 - [x] Grass spread through large jungle trees
-- [x] crying obsidian portal
 - [x] caffeine config (for disabling mixins using a config)
 - [x] faster wandering trader spawn (max chance increased from 7.5% to 15%) (spawnDelay decreased from 20 minutes to 5 minutes) (so a trader should spawn in 30 minutes on averages, vanilla is 4 hours)
 - [x] 2x2 azalea trees (little stable)
@@ -41,10 +35,8 @@ Here is a sample config with everything enabled
 
 ```java
 mixin.renewable_deepslate=true
-mixin.crying_portals=true
-mixin.spread_netherack=true
+mixin.skyblock_wandering_trader_trades=true
 mixin.snowballs_with_hands=true
-mixin.more_wandering_trades=true
 mixin.overworld_piglins=true
 mixin.renewable_grass=true
 mixin.renewable_netherack_and_nylium=true
