@@ -12,6 +12,7 @@
     "renewable_grass.JungleSaplingGeneratorMixin",
     "overworld_piglins.PigEntityMixin",
     "snowballs_with_hands.AbstractBlockSettingsMixin",
+    "one_time_lava.GiveGiftsToHeroTaskMixin",
     "skyblock_wandering_trader_trades.WanderingTraderEntityMixin",
     "renewable_deepslate.FluidBlockMixin",
     "renewable_deepslate.LavaFluidMixin"
