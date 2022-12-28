@@ -17,7 +17,9 @@ import net.minecraft.world.dimension.DimensionTypes;
 @Mixin(FluidBlock.class)
 public abstract class FluidBlockMixin {
   @Shadow
-  private void playExtinguishSound(WorldAccess world, BlockPos pos){};
+  private void playExtinguishSound(WorldAccess world, BlockPos pos) {
+
+  };
 
   @Inject(method = "receiveNeighborFluids", at = @At(value = "INVOKE", target = "Lnet/minecraft/fluid/FluidState;isSource()Z"), cancellable = true)
   private void receiveFluidToDeepslate(World world, BlockPos pos, BlockState state,
