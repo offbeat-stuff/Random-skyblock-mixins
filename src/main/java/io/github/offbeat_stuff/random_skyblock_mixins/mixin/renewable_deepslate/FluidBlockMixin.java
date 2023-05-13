@@ -30,13 +30,13 @@ public abstract class FluidBlockMixin {
     if (world.getFluidState(pos).isSource())
       return;
 
-    // Don't generate deepslate above y=0.
-    if (pos.getY() >= 0)
-    return;
-
     // Choose the block to replace the fluid with, based on the current dimension.
-    var block = world.getDimensionKey().equals(DimensionTypes.THE_END) ? Blocks.END_STONE : Blocks.COBBLED_DEEPSLATE;
+    var block = Blocks.COBBLED_DEEPSLATE;
 
+    if (((World) world).getDimensionKey().equals(DimensionTypes.THE_END))
+      block = Blocks.END_STONE;
+    else if (pos.getY() >= 0)
+      return;
 
     world.setBlockState(pos, block.getDefaultState());
     this.playExtinguishSound(world, pos);

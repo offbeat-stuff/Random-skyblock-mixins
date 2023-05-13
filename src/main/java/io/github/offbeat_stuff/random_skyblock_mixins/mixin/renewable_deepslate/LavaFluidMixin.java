@@ -28,13 +28,15 @@ public abstract class LavaFluidMixin {
   @Inject(method = "flow", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/Block;getDefaultState()Lnet/minecraft/block/BlockState;"), cancellable = true)
   private void generateDeepslate(WorldAccess world, BlockPos pos, BlockState state, Direction direction,
       FluidState fluidState, CallbackInfo ci) {
-    // Don't generate deepslate above y=0.
-    if (pos.getY() >= 0)
-    return;
 
     // Choose the block to replace the fluid with, based on the current dimension.
-    var block = ((World) world).getDimensionKey().equals(DimensionTypes.THE_END) ? Blocks.END_STONE : Blocks.DEEPSLATE;
-    
+    var block = Blocks.DEEPSLATE;
+
+    if (((World) world).getDimensionKey().equals(DimensionTypes.THE_END))
+      block = Blocks.END_STONE;
+    else if (pos.getY() >= 0)
+      return;
+
     world.setBlockState(pos, block.getDefaultState(), Block.NOTIFY_ALL);
     this.playExtinguishEvent(world, pos);
 
