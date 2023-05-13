@@ -13,10 +13,13 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.LavaFluid;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.dimension.DimensionTypes;
 
 @Mixin(LavaFluid.class)
 public abstract class LavaFluidMixin {
+
   @Shadow
   private void playExtinguishEvent(WorldAccess world, BlockPos pos) {
 
@@ -25,10 +28,16 @@ public abstract class LavaFluidMixin {
   @Inject(method = "flow", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/Block;getDefaultState()Lnet/minecraft/block/BlockState;"), cancellable = true)
   private void generateDeepslate(WorldAccess world, BlockPos pos, BlockState state, Direction direction,
       FluidState fluidState, CallbackInfo ci) {
-    if (pos.getY() < 0) {
-      world.setBlockState(pos, Blocks.DEEPSLATE.getDefaultState(), Block.NOTIFY_ALL);
-      this.playExtinguishEvent(world, pos);
-      ci.cancel();
-    }
+    // Don't generate deepslate above y=0.
+    if (pos.getY() >= 0)
+    return;
+
+    // Choose the block to replace the fluid with, based on the current dimension.
+    var block = ((World) world).getDimensionKey().equals(DimensionTypes.THE_END) ? Blocks.END_STONE : Blocks.DEEPSLATE;
+    
+    world.setBlockState(pos, block.getDefaultState(), Block.NOTIFY_ALL);
+    this.playExtinguishEvent(world, pos);
+
+    ci.cancel();
   }
 }
