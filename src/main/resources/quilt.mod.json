@@ -11,7 +11,10 @@
     },
     "intermediate_mappings": "net.fabricmc:intermediary",
     "entrypoints": {
-      "init": "${maven_group}.${archives_base_name}.${ModName}Mod"
+      "init": "${maven_group}.${archives_base_name}.${ModName}Mod",
+      "fabric-datagen": [
+        "${maven_group}.${archives_base_name}.${ModName}Generator"
+      ]
     },
     "depends": [
       {
