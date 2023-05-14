@@ -38,8 +38,8 @@ dependencies {
 	modImplementation libs.qsl
 	// modImplementation libs.bundles.quilted.fabric.api // If you wish to use Fabric API's deprecated modules, you can replace the above line with this one
 
-  modImplementation "net.caffeinemc:mixin-config:1.0.0"
-  include "net.caffeinemc:mixin-config:1.0.0"
+  modImplementation "net.caffeinemc:CaffeineConfig:1.1.0"
+  include "net.caffeinemc:CaffeineConfig:1.1.0"
 }
 
 processResources {
