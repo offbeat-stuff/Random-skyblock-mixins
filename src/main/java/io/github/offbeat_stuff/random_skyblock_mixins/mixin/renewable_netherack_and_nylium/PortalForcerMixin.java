@@ -13,7 +13,7 @@ import net.minecraft.registry.Holder;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.PortalForcer;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeKeys;
+import net.minecraft.world.biome.Biomes;
 
 @Mixin(PortalForcer.class)
 public class PortalForcerMixin {
@@ -22,9 +22,9 @@ public class PortalForcerMixin {
   private ServerWorld world;
 
   private BlockState getExtensionBlock(Holder<Biome> biome) {
-    if (biome.isRegistryKey(BiomeKeys.CRIMSON_FOREST) && world.getRandom().nextInt(10) == 0)
+    if (biome.isRegistryKey(Biomes.CRIMSON_FOREST) && world.getRandom().nextInt(10) == 0)
       return Blocks.CRIMSON_NYLIUM.getDefaultState();
-    if (biome.isRegistryKey(BiomeKeys.WARPED_FOREST) && world.getRandom().nextInt(10) == 0)
+    if (biome.isRegistryKey(Biomes.WARPED_FOREST) && world.getRandom().nextInt(10) == 0)
       return Blocks.WARPED_NYLIUM.getDefaultState();
     return Blocks.NETHERRACK.getDefaultState();
   }

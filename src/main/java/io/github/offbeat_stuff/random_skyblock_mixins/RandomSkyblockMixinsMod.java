@@ -17,7 +17,6 @@ import net.minecraft.block.CaveVines;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.unmapped.C_rgeelgbr;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DataPool;
 import net.minecraft.util.math.Direction;
@@ -31,6 +30,7 @@ import net.minecraft.world.gen.foliage.JungleFoliagePlacer;
 import net.minecraft.world.gen.foliage.RandomSpreadFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
+import net.minecraft.world.gen.treedecorator.AttachedToLeavesTreeDecorator;
 import net.minecraft.world.gen.treedecorator.LeavesVineTreeDecorator;
 import net.minecraft.world.gen.treedecorator.TrunkVineTreeDecorator;
 import net.minecraft.world.gen.trunk.GiantTrunkPlacer;
@@ -88,7 +88,7 @@ public class RandomSkyblockMixinsMod implements ModInitializer {
             new TwoLayersFeatureSize(1, 1, 2))
             .dirtProvider(BlockStateProvider.of(Blocks.ROOTED_DIRT))
             .forceDirt()
-            .decorators(ImmutableList.of(new C_rgeelgbr(
+            .decorators(ImmutableList.of(new AttachedToLeavesTreeDecorator(
                 0.4F,
                 1,
                 0,
