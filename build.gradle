@@ -42,6 +42,8 @@ dependencies {
   include "net.caffeinemc:CaffeineConfig:1.1.0"
 }
 
+sourceSets.main.resources.srcDir "$buildDir/generated/resources"
+
 processResources {
 	filesMatching("quilt.mod.json") {
 		expand(project.properties)
