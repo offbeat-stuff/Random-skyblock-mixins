@@ -11,11 +11,11 @@
     "renewable_netherack_and_nylium.PortalForcerMixin",
     "renewable_grass.JungleSaplingGeneratorMixin",
     "overworld_piglins.PigEntityMixin",
+    "renewable_deepslate_and_end_stone.FluidBlockMixin",
+    "renewable_deepslate_and_end_stone.LavaFluidMixin",
     "snowballs_with_hands.AbstractBlockSettingsMixin",
     "one_time_lava.GiveGiftsToHeroTaskMixin",
-    "skyblock_wandering_trader_trades.WanderingTraderEntityMixin",
-    "renewable_deepslate.FluidBlockMixin",
-    "renewable_deepslate.LavaFluidMixin"
+    "skyblock_wandering_trader_trades.WanderingTraderEntityMixin"
   ],
   "client": [],
   "injectors": {

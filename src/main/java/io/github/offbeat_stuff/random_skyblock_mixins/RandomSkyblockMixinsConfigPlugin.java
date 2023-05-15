@@ -9,10 +9,10 @@ public class RandomSkyblockMixinsConfigPlugin extends AbstractCaffeineConfigMixi
   @Override
   protected CaffeineConfig createConfig() {
     return CaffeineConfig.builder("RandomSkyblockMixins")
-        .addMixinOption("renewable_deepslate", false)
         .addMixinOption("skyblock_wandering_trader_trades", false)
         .addMixinOption("one_time_lava", false)
         .addMixinOption("snowballs_with_hands", false)
+        .addMixinOption("renewable_deepslate_and_end_stone", false)
         .addMixinOption("overworld_piglins", false)
         .addMixinOption("renewable_grass", false)
         .addMixinOption("renewable_netherack_and_nylium", false)

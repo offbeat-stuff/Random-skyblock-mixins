@@ -34,9 +34,10 @@ Mixins can be enabled by editing `.minecraft/config/randomskyblockmixins.propert
 Here is a sample config with everything enabled
 
 ```java
-mixin.renewable_deepslate=true
 mixin.skyblock_wandering_trader_trades=true
+mixin.one_time_lava=true
 mixin.snowballs_with_hands=true
+mixin.renewable_deepslate_and_end_stone=true
 mixin.overworld_piglins=true
 mixin.renewable_grass=true
 mixin.renewable_netherack_and_nylium=true
