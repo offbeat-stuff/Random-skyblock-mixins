@@ -1,18 +1,20 @@
-# Renewables
+# **Warning**
+* Attention: All the features are disabled by default.
 
-> Grass -> by growing a mega jungle tree surrounding grass placed on dirt
+# Final planned renewable resource methods
 
-> Netherack (+Nylium) -> by making a floating nether portal, it will generate with 4 netherack as extension + there is a 1 in 10 chance of it being a nylium (for corresponding biome)
-
-> glow berries -> by growing a mega 2x2 azalea tree
-
-> piglins in the overworld by hitting pigs with a lightning bolt pigs will convert into piglins
-
-> Arctic foxes spawn with snowball instead of feather,foxes spawn with sweet berries instead of wheat in their mouth
-
-> Endstone -> will generate through a cobblestone generator in the end
-
-</br>
+- Grass Block: by growing a mega jungle tree surrounding grass placed on dirt.
+- Netherack (+Nylium): a floating nether portal generates with 4 netherack as an extension, and there is a 1 in 10 chance of it being a nylium (for the corresponding biome).
+- Glow Berries: by growing a mega 2x2 azalea tree will produce glow berries.
+- Piglins: by striking pigs with a lightning bolt in the overworld, they will convert into piglins.
+- Netherite: by trading with piglins in the overworld (through lightning) before they convert.
+- Sweet Berries (+Snowball): Arctic foxes spawn with snowballs instead of feathers, and foxes spawn with sweet berries instead of wheat in their mouths.
+- Endstone: Endstone can be generated through a cobblestone generator in the End.
+- Deepslate: By Using a cobblestone generator below y=0.
+- Mycelium: By growing huge mushroom in Mushroom Fields biome.
+- Snowball: By breaking them with hands (make sense right).
+- Lava (One time only): By getting Hotv gift from **Weaponsmith**.
+- Having more bedrock parity for more renewables like coffee beans,grindstone etc.
 
 # Implemented currently
 - [x] Foxes (berries + snowball)
@@ -22,9 +24,13 @@
 - [x] 2x2 azalea trees (little stable)
 - [x] snow dropping snowballs without requiring tools
 - [x] piglins spawning when pigs are hit by lightning
+- [x] one time lava trade
 
 # Todo
 - [ ] Implement custom FoliagePlacer for 2x2 azalea tree so on growing you dont find glow berries on ground instantly
+- [ ] Implement datapack to enable netherite trading
+- [ ] Add bedrock parity for grindstone,coffee beans etc.
+- [ ] Renewable Mycelium
 
 # Usage
 - Note: All features are disabled by default and features cannot be toggled ingame
@@ -34,6 +40,7 @@ Mixins can be enabled by editing `.minecraft/config/randomskyblockmixins.propert
 Here is a sample config with everything enabled
 
 ```java
+mixin.renewable_mycelium=true
 mixin.skyblock_wandering_trader_trades=true
 mixin.one_time_lava=true
 mixin.snowballs_with_hands=true

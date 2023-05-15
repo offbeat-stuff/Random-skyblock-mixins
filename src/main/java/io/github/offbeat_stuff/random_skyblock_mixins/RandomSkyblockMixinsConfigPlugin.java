@@ -9,6 +9,7 @@ public class RandomSkyblockMixinsConfigPlugin extends AbstractCaffeineConfigMixi
   @Override
   protected CaffeineConfig createConfig() {
     return CaffeineConfig.builder("RandomSkyblockMixins")
+        .addMixinOption("renewable_mycelium", false)
         .addMixinOption("skyblock_wandering_trader_trades", false)
         .addMixinOption("one_time_lava", false)
         .addMixinOption("snowballs_with_hands", false)

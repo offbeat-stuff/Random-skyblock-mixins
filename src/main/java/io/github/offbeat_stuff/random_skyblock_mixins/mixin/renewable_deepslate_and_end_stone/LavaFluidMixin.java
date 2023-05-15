@@ -1,4 +1,4 @@
-package io.github.offbeat_stuff.random_skyblock_mixins.mixin.renewable_deepslate;
+package io.github.offbeat_stuff.random_skyblock_mixins.mixin.renewable_deepslate_and_end_stone;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

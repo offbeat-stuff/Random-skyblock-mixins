@@ -15,7 +15,8 @@
     "renewable_deepslate_and_end_stone.LavaFluidMixin",
     "snowballs_with_hands.AbstractBlockSettingsMixin",
     "one_time_lava.GiveGiftsToHeroTaskMixin",
-    "skyblock_wandering_trader_trades.WanderingTraderEntityMixin"
+    "skyblock_wandering_trader_trades.WanderingTraderEntityMixin",
+    "renewable_mycelium.HugeMushroomFeatureMixin"
   ],
   "client": [],
   "injectors": {
