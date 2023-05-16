@@ -10,6 +10,7 @@
     "foxes_with_berries.FoxEntityMixin",
     "renewable_netherack_and_nylium.PortalForcerMixin",
     "renewable_grass.JungleSaplingGeneratorMixin",
+    "overworld_piglins.PiglinEntityMixin",
     "overworld_piglins.PigEntityMixin",
     "renewable_deepslate_and_end_stone.FluidBlockMixin",
     "renewable_deepslate_and_end_stone.LavaFluidMixin",
